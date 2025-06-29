@@ -8,7 +8,6 @@ import 'buttons.dart';
 
 class ScreenOne extends StatefulWidget {
   ScreenOne({super.key});
-  static int currentPlanetIndex=0;
   @override
   State<ScreenOne> createState() => _ScreenOneState();
 }

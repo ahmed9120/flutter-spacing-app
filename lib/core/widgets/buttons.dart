@@ -21,7 +21,7 @@ class CircularArrowButton extends StatelessWidget {
             pageController!.previousPage(duration: Duration(microseconds: 1000), curve: Curves.bounceInOut);
           }
         }else if(screenNumber==2){
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScreenOne()));
+          Navigator.of(context).pop();
         }
 
       },
@@ -52,7 +52,6 @@ class BottomElevatedButton extends StatelessWidget {
           ),
           onPressed: (){
             if(screenNumber==0){
-
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScreenOne()));
             }else if(screenNumber==1){
               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScreenTwo(planetIndex: planetIndex)));
@@ -60,7 +59,7 @@ class BottomElevatedButton extends StatelessWidget {
           },
           child: Row(
             children: [
-              Expanded(child: Text("Explore ${planets[planetIndex].name}", style: TextStyle(color: AppColors.white, fontSize: 20, fontWeight: FontWeight.bold,)),),
+              Expanded(child: Text("Explore ${(screenNumber==1)?planets[planetIndex].name:""}", style: TextStyle(color: AppColors.white, fontSize: 20, fontWeight: FontWeight.bold,)),),
               Icon(Icons.arrow_forward, color: AppColors.white,size: 30,),
             ],
           )
